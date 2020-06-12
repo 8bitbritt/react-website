@@ -1,0 +1,274 @@
+/* Variables */
+$red: #B86E6F;
+$tan: #F6EEE3;
+$heading-font: 'Libre Baskerville', serif;
+$body-font: 'Source Sans Pro', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap');
+:root{
+--sidebar-flex:1.5;
+--container-flex:6;
+--fontsize-p:1.2rem;
+--fontsize-nav:1.6rem;
+--typing-font:3rem;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*
+{
+margin:0;
+padding: 0;
+}
+body
+{
+font-family: $body-font;
+background-color: $tan;
+}
+
+img{
+    width:100%;
+    max-width:100%;
+}
+
+a {
+    color: $red;
+}
+a:hover{
+    text-decoration:underline;
+}
+
+.App
+{
+display: flex;
+width:100%;
+height:100vh;
+flex-wrap:wrap;
+flex-shrink:1;
+}
+/* .container class is for the right side content container*/
+.container
+{
+padding: 2em;
+width:100%;
+background-color: $tan;
+flex:var(--container-flex);
+}
+
+/* Homepage */
+.home{
+    display:flex;
+h1{
+    margin-left:-2.2em;
+    font-size: 3.5em;
+    margin-top:40vh;
+    line-height:1em;
+    color: $red;
+    font-family: $heading-font;
+}
+img{
+    max-width:533px;
+    max-height:100%;
+}
+}
+
+/*Navbar Styles*/
+nav
+{
+font-family: $heading-font;
+padding:30px 30px 20px 30px ;
+flex:var(--sidebar-flex);
+background: $red;
+}
+nav ul
+{
+  font-size:var(--fontsize-nav) ;
+  text-align: center;
+  list-style-type: none;
+  text-decoration: none;
+  color: white !important;
+}
+nav ul li
+{
+  margin:40px;
+}
+nav ul li a{
+    color: $tan;
+    text-decoration:none;
+}
+
+nav ul li a:hover{
+    text-decoration:underline;
+}
+
+.active
+{
+font-weight: bolder;
+}
+
+/* about */
+
+.about{
+    .about-content{
+        margin:0 auto;
+        text-align:center;
+        p{
+            max-width:500px;
+            margin: 0 auto;
+        }
+    }
+    img{
+        max-width:300px;
+        border-radius: 50%;
+        margin-top:2em;
+    }
+}
+
+ h2{
+font-size:2.5em;
+color: $red;
+font-family: $heading-font;
+    }
+p
+{
+font-size: var(--fontsize-p);
+line-height:1.3em;
+}
+h1,h2,h3,h4,p
+{
+margin: 10px;
+}
+h4{
+    font-size:1.8em;
+}
+h3{
+    font-size:1.5em;
+    line-height:1.4em;
+}
+strong{
+    font-weight:700;
+}
+
+/*Portfolio*/
+.gallery{
+    margin-top:2em;
+    display:grid;
+    grid-gap: 2em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.contact{
+    h3{
+        margin-top:2em;
+        text-align:center;
+        font-size:2.5em;
+        color: $red;
+    }
+    p{
+        text-align:center;
+        color: #888;
+        font-weight: 700;
+    }
+}
+
+.social{
+    padding-top: 2em;
+    text-align:center;
+  ul{
+      li{
+          font-size:1.2em;
+          display:inline-block;
+          padding:1em;
+      }
+  }
+}
+
+/* Responsive Styles */
+
+@media only screen and (max-width: 1100px){
+    .home h1{
+        font-size:4.5vw;
+        margin-left:-15vw;
+    }
+}
+
+
+@media only screen and (max-width: 1024px){
+    nav{
+        flex:auto;
+        ul li{
+        display:inline-block;
+        margin:10px;
+        font-size:4vw;
+        }
+    }
+    .container{
+        flex: auto;
+    }
+
+    .contact h3{
+        font-size:2em;
+    }
+ 
+ .gallery{
+     grid-template-columns: 1fr 1fr;
+     grid-gap:1em;
+ }
+ .home{
+     flex-direction:column-reverse;
+     img{
+         margin:0 auto;
+     }
+     h1{
+         margin:0 auto;
+         font-size: 3.5em;
+         padding-bottom:1em;
+     }
+ }
+ h2{
+     text-align:center;
+ }
+}
+
